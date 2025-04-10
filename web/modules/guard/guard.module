@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for guard module.
+ */
+
+use Drupal\Core\Template\Attribute;
+
+/**
+ * Prepares variables for views-style-guard-services.html.twig template.
+ */
+function template_preprocess_views_style_guard_services(array &$variables): void {
+  $view = $variables['view'];
+  $options = $view->style_plugin->options;
+
+  // Fetch wrapper classes from handler options.
+  if ($options['wrapper_class']) {
+    $variables['attributes']['class'] = explode(' ', $options['wrapper_class']);
+  }
+
+  $variables['default_row_class'] = $options['default_row_class'];
+  foreach ($variables['rows'] as $id => $row) {
+    $field_items = $row['#row']->_entity->get('field_img');
+        
+    foreach ($field_items as $item) {
+        $file_id = $item->target_id;
+    }
+   
+        $file = \Drupal\file\Entity\File::load($file_id);
+        $uri = $file->getFileUri();
+        $realpath = \Drupal::service('file_system')->realpath($uri);
+
+        $path = str_replace($_SERVER['DOCUMENT_ROOT'] . '/', '', $realpath);
+    
+
+    $variables['rows'][$id] = [
+        'content' => $row,
+        'attributes' => new \Drupal\Core\Template\Attribute(),
+    ];
+    $variables['rows'][$id]['title'] = $row['#row']->_entity->getTitle();
+    $variables['rows'][$id]['url'] = $path;
+    $variables['rows'][$id]['body'] = $row['#row']->_entity->get('field_home_security')->getValue()[0]['value'];
+  
+    if ($row_class = $view->style_plugin->getRowClass($id)) {
+      $variables['rows'][$id]['attributes']->addClass($row_class);
+    }
+  }
+}

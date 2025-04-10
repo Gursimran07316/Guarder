@@ -1,0 +1,49 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a view template to display a list of rows.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the container.
+ * - rows: A list of rows.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's contents.
+ * - title: The title of this group of rows. May be empty.
+ *
+ * @see template_preprocess_views_style_guard_services()
+ */
+#}
+<section class="service_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Our services
+        </h2>
+      </div>
+<div class="row" >
+
+  {% for row in rows %}
+  
+      
+      <div class="col-md-4">
+          <div class="box ">
+           <div class="img-box">
+              {{ source(row.url) }}
+            </div>
+            <div class="detail-box">
+              <h6>
+                {{row.title}}
+              </h6>
+              <p>
+                {{row.body}}
+              </p>
+              <a href="">
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+  {% endfor %}
+  </div>
+     </div>
+     </section>

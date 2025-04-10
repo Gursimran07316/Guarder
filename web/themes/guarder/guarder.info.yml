@@ -1,0 +1,19 @@
+name: guarder
+type: theme
+base theme: stark
+description: custom theme
+package: Custom
+core_version_requirement: ^10 || ^11
+libraries:
+  - guarder/global
+regions:
+  header: 'Header'
+  hero: 'Hero'
+  about_section: 'About section'
+  service_section: 'Service section'
+  client_section: 'Client section'
+  contact_section: 'Contact section'
+  team_section: 'Team section'
+  info_section: 'Info section'
+  footer: 'footer'
+ 

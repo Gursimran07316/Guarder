@@ -1,0 +1,7 @@
+views.style.guard_services:
+  type: views_style
+  label: 'services'
+  mapping:
+    wrapper_class:
+      type: string
+      label: 'Wrapper class'

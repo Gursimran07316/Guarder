@@ -1,0 +1,16 @@
+# Main theme library.
+global:
+  js:
+    js/bootstrap.js: {}
+    js/custom.js: {}
+    js/jquery-3.4.1.min.js: {}
+  css:
+    base:
+      css/font-awesome.min.css: {}
+      css/responsive.css: {}
+      css/style.css: {}
+  
+    layout:
+      css/bootstrap.css: {} 
+    theme:
+      css/theme/print.css: { media: print }
