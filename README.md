@@ -25,7 +25,7 @@ This project showcases:
 
 ## 🛠️ Technologies Used
 
-- Drupal 10.x
+- Drupal 11.x
 - Bootstrap 4.x
 - Twig Templating Engine
 - PHP (Custom module for preprocess functions)
@@ -115,7 +115,7 @@ This project is open-source and available under the [MIT License](LICENSE).
 Frontend & Drupal Developer
 
 Connect:
-- [LinkedIn](https://linkedin.com/in/gursimran07316)
+- [LinkedIn](https://linkedin.com/in/webguri)
 - [Portfolio](https://gursimrankhela.com/)
 
 ---
