@@ -70,7 +70,7 @@ web/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Gursimran07316/guarder-drupal-theme.git
+   git clone https://github.com/Gursimran07316/Guarder.git
    ```
 
 2. Install dependencies:
